@@ -14,15 +14,15 @@ public class Book extends Product {
         return author;
     }
 
-        @Override
-    public Boolean matches(String query) {
-            if (super.matches(query)) {
-                return true;
-            }
-            if (author.contains(query)) {
-                return true;
-            }
-            return false;
-        }
+//        @Override
+//    public Boolean matches(String query) {
+//            if (super.matches(query)) {
+//                return true;
+//            }
+//            if (author.contains(query)) {
+//                return true;
+//            }
+//            return false;
+//        }
 }
 

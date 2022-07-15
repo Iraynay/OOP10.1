@@ -4,19 +4,19 @@ import ru.netology.Product.Book;
 import ru.netology.Product.Product;
 import ru.netology.Product.Smartphone;
 
-
 public class ProductRepo {
     protected Product[] productItems = new Product[0];
 
-    public void saveProduct (Product item) {
-        int length = productItems.length +1;
-        Product [] tmp = new Product[length];
-        System.arraycopy(productItems, 0,tmp,0,productItems.length);
-        int lastItem = tmp.length -1;
+    public void saveProduct(Product item) {
+        int length = productItems.length + 1;
+        Product[] tmp = new Product[length];
+        System.arraycopy(productItems, 0, tmp, 0, productItems.length);
+        int lastItem = tmp.length - 1;
         tmp[lastItem] = item;
         productItems = tmp;
     }
-    public void removeById (int id) {
+
+    public void removeById(int id) {
         int length = productItems.length;
         Product[] tmp = new Product[length];
         int index = 0;
@@ -27,16 +27,17 @@ public class ProductRepo {
             }
         }
     }
-        public Product[] findAll() {
-            Product[] allResult = new Product[productItems.length];
-            for (int i = 0; i< allResult.length; i++) {
-                int index = i;
-                allResult[i] = productItems [index];
-            }
-            return allResult;
-        }
 
+    public Product[] findAll() {
+        Product[] allResult = new Product[productItems.length];
+        for (int i = 0; i < allResult.length; i++) {
+            int index = i;
+            allResult[i] = productItems[index];
+        }
+        return allResult;
     }
+
+}
 
 
 //public void saveSmartphone ( Smartphone item) {

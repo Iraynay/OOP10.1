@@ -15,14 +15,14 @@ public class Smartphone extends Product {
         super(id, name, cost);
         this.manufacturer = manufacturer;
     }
-    @Override
-    public Boolean matches(String query) {
-        if (super.matches(query)) {
-            return true;
-        }
-        if (manufacturer.contains(query)) {
-            return  true;
-        }
-        return  false;
-    }
+//    @Override
+//    public Boolean matches(String query) {
+//        if (super.matches(query)) {
+//            return true;
+//        }
+//        if (manufacturer.contains(query)) {
+//            return  true;
+//        }
+//        return  false;
+//    }
 }
