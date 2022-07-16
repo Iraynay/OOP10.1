@@ -1,23 +1,22 @@
 package ru.netology.Product.repository;
 
-import ru.netology.Product.Book;
 import ru.netology.Product.Product;
-import ru.netology.Product.Smartphone;
 
 public class ProductRepo {
     protected Product[] productItems = new Product[0];
 
-    public void saveProduct(Product item) {
+    public Product[] saveProduct(Product item) {
         int length = productItems.length + 1;
         Product[] tmp = new Product[length];
         System.arraycopy(productItems, 0, tmp, 0, productItems.length);
         int lastItem = tmp.length - 1;
         tmp[lastItem] = item;
         productItems = tmp;
+        return tmp;
     }
 
-    public void removeById(int id) {
-        int length = productItems.length;
+    public Product[] removeById(int id) {
+        int length = productItems.length - 1;
         Product[] tmp = new Product[length];
         int index = 0;
         for (Product item : productItems) {
@@ -26,6 +25,7 @@ public class ProductRepo {
                 index++;
             }
         }
+        return tmp;
     }
 
     public Product[] findAll() {

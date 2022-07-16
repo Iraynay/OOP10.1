@@ -47,6 +47,7 @@ public class ProductManager {
                 }
 
                 tmp[tmp.length - 1] = product;
+                result = tmp;
             }
 
         return result;
