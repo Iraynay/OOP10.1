@@ -22,6 +22,8 @@ public class Main {
         Product[] result1 = manager.searchBy("Gal");
         System.out.println(result1);
 
+        repo.removeById(405);
+
 
     }
 }
