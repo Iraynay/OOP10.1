@@ -76,7 +76,51 @@ public class ProductManagerTest {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+    @Test
+    public void managerSearchByFewItemsInResultTest() {
+        ProductRepo repository = new ProductRepo();
+        ProductManager testManager = new ProductManager(repository);
 
+        testManager.add(book1);
+        testManager.add(book2);
+        testManager.add(smartphone1);
+        testManager.add(smartphone2);
+        Product[] actual = testManager.searchBy("po");
+        Product[] expected = {book1, book2};
 
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void managerSearchByNoItemsInResultTest() {
+        ProductRepo repository = new ProductRepo();
+        ProductManager testManager = new ProductManager(repository);
+
+        testManager.add(book1);
+        testManager.add(book2);
+        testManager.add(smartphone1);
+        testManager.add(smartphone2);
+        Product[] actual = testManager.searchBy("Krya");
+        Product[] expected = {};
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+    @Test
+    public void managerSearchByOneItemsInResultTest() {
+        ProductRepo repository = new ProductRepo();
+        ProductManager testManager = new ProductManager(repository);
+
+        testManager.add(book1);
+        testManager.add(book2);
+        testManager.add(smartphone1);
+        testManager.add(smartphone2);
+        Product[] actual = testManager.searchBy("iPhone");
+        Product[] expected = {smartphone2};
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
 }
 
